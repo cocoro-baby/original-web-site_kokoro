@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-    <h1>hello</h1>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>輪をん | 心ほどける、和のひととき</title>
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+    <body>
+        <h1>コードを綺麗に整える</h1>
+        
+        <h1 class="main-logo">食と酒の団欒 輪をん</h1>
+        <header class="main-visual">
+            <div class="logo-container">
+                <img
+                    src="images/waon-photo1.jpg"
+                    alt="輪をんのロゴ"
+                    class="main-logo-img"
+                />
+            </div>
+        </header>
+
+        <header class="header-bar">
+            <ul class="nav-list">
+                <li><a href="#about">ご挨拶</a></li>
+                <li><a href="#menu">お品書き</a></li>
+                <li><a href="#news">お知らせ</a></li>
+            </ul>
+        </header>
+
+        <section id="about">
+            <h2>ご挨拶</h2>
+            <p>
+                小料理屋
+                「輪をん」は、心ほどけるような優しい味と、あたたかい時間を提供しています。
+            </p>
+            <p>
+                店名の「輪をん」は、ひらがなの最後の文字「わ・を・ん」からきています。<br />
+                言葉の終わりのように、皆さまの日々の締めくくりや、最後にふらりと立ち寄りたくなる場所でありたい
+                - そんな想いが込められています。
+            </p>
+            <p>
+                女将が一品一品、想いを込めて手作りしたお料理とお酒を囲みながら、どこか楽しくて落ち着く、そんな時間をお過ごしいただけます。
+            </p>
+            <p>
+                初めての方も、常連さんも、皆さまにとって「ただいま」と言いたくなるような場所いなれば嬉しいです。
+            </p>
+        </section>
+
+        <script>
+            // スライドショー
+            const slides = document.querySelectorAll(".slide");
+            let current = 0;
+
+            setInterval(() => {
+                slides[current].classList.remove("active");
+                current = (current + 1) % slides.length;
+                slides[current].classList.add("active");
+            }, 4000);
+
+            // ナビバーのスクロール制御
+            let lastScroll = 0;
+            const headerBar = document.querySelector(".header-bar");
+
+            window.addEventListener("scroll", () => {
+                const currentScroll = window.scrollY;
+                if (currentScroll > lastScroll) {
+                    headerBar.style.top = "-80px";
+                } else {
+                    headerBar.style.top = "0";
+                }
+                lastScroll = currentScroll;
+            });
+        </script>
+    </body>
 </html>
