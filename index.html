@@ -7,70 +7,199 @@
         <link rel="stylesheet" href="./assets/css/style.css" />
     </head>
     <body>
-        <h1>コードを綺麗に整える</h1>
-        
-        <h1 class="main-logo">食と酒の団欒 輪をん</h1>
-        <header class="main-visual">
-            <div class="logo-container">
-                <img
-                    src="images/waon-photo1.jpg"
-                    alt="輪をんのロゴ"
-                    class="main-logo-img"
-                />
+        <div class="intro-screen">
+            <div class="intro-text">
+                <p class="subtitle">食と酒の団欒</p>
+                <p class="title">輪をん</p>
             </div>
-        </header>
+        </div>
 
-        <header class="header-bar">
-            <ul class="nav-list">
-                <li><a href="#about">ご挨拶</a></li>
-                <li><a href="#menu">お品書き</a></li>
-                <li><a href="#news">お知らせ</a></li>
-            </ul>
+        <header class="site-header">
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#about">ご挨拶</a></li>
+                    <li><a href="#menu-food">お品書き</a></li>
+                    <li><a href="#news">店舗情報</a></li>
+                </ul>
+            </nav>
         </header>
+        <section class="hero">
+            <div class="slideshow-container">
+                <img
+                    class="slide"
+                    src="assets/img/waon_sign.jpg"
+                    alt="輪をんの看板"
+                />
+                <img
+                    class="slide"
+                    src="assets/img/waon_counter.jpg"
+                    alt="カウンター"
+                />
+                <img
+                    class="slide"
+                    src="assets/img/waon_osake2.jpg"
+                    alt="日本酒"
+                />
+                <img
+                    class="slide"
+                    src="assets/img/waon_karaage.jpg"
+                    alt="唐揚げ"
+                />
+                <img
+                    class="slide"
+                    src="assets/img/waon_sukiyaki.jpg"
+                    alt="すき焼き"
+                />
+
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+            <div class="hero-text">
+                <div class="vertical-text">
+                    <p class="subtitle">食と酒の団欒</p>
+                    <p class="title">輪をん</p>
+                </div>
+            </div>
+        </section>
 
         <section id="about">
             <h2>ご挨拶</h2>
-            <p>
-                小料理屋
-                「輪をん」は、心ほどけるような優しい味と、あたたかい時間を提供しています。
-            </p>
-            <p>
-                店名の「輪をん」は、ひらがなの最後の文字「わ・を・ん」からきています。<br />
-                言葉の終わりのように、皆さまの日々の締めくくりや、最後にふらりと立ち寄りたくなる場所でありたい
-                - そんな想いが込められています。
-            </p>
-            <p>
-                女将が一品一品、想いを込めて手作りしたお料理とお酒を囲みながら、どこか楽しくて落ち着く、そんな時間をお過ごしいただけます。
-            </p>
-            <p>
-                初めての方も、常連さんも、皆さまにとって「ただいま」と言いたくなるような場所いなれば嬉しいです。
-            </p>
+            <div class="about-block">
+                <img src="assets/img/waon_sign2.jpg" alt="輪をんの提灯" />
+                <div class="about-text">
+                    <p>
+                        小料理屋「輪をん」は、心ほどけるような優しい味と、あたたかい時間を提供しています。<br />
+                        店名の「輪をん」は、ひらがなの最後の文字「わ・を・ん」からきています。<br />
+                        言葉の終わりのように、皆さまの日々の締めくくりや、最後にふらりと立ち寄りたくなる場所でありたい——<br />
+                        そんな想いが込められています。
+                    </p>
+                </div>
+            </div>
+
+            <!-- 第2部：文章左、画像右 -->
+            <div class="about-block reverse">
+                <div class="about-text">
+                    <p>
+                        女将が一品一品、想いを込めて手作りしたお料理とお酒を囲みながら、<br />
+                        どこか楽しくて落ち着く、そんな時間をお過ごしいただけます。<br />
+                        初めての方も、常連さんも、皆さまにとって「ただいま」と言いたくなるような場所になれば嬉しいです。
+                    </p>
+                </div>
+                <img src="assets/img/waon_counter2.jpg" alt="お酒とカウンターの風景" />
+            </div>
         </section>
 
+        <section id="menu-food">
+            <h2>お品書き</h2>
+            <div class="menu-grid">
+                <!-- 6つ分あとで画像とテキスト入れてね -->
+                <div class="menu-item">
+                    <img src="https://placehold.jp/400x300.png" />
+                    <div class="caption">料理1</div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://placehold.jp/400x300.png" />
+                    <div class="caption">料理2</div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://placehold.jp/400x300.png" />
+                    <div class="caption">料理3</div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://placehold.jp/400x300.png" />
+                    <div class="caption">料理4</div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://placehold.jp/400x300.png" />
+                    <div class="caption">料理5</div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://placehold.jp/400x300.png" />
+                    <div class="caption">料理6</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu-drinks">
+            <h2>お酒</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://placehold.jp/400x300.png" />
+                    <div class="caption">お酒1</div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://placehold.jp/400x300.png" />
+                    <div class="caption">お酒2</div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://placehold.jp/400x300.png" />
+                    <div class="caption">お酒3</div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://placehold.jp/400x300.png" />
+                    <div class="caption">お酒4</div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://placehold.jp/400x300.png" />
+                    <div class="caption">お酒5</div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://placehold.jp/400x300.png" />
+                    <div class="caption">お酒6</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="news">
+            <h2>店舗情報</h2>
+            <p>
+                📍 住所：<a href="https://maps.google.com" target="_blank"
+                    >Googleマップで開く</a
+                >
+            </p>
+            <p>🕐 定休日：月曜日</p>
+        </section>
+
+        <footer>
+            <p>© 2025 輪をん</p>
+            <div class="sns-icons">
+                <a href="#"><img src="images/line-icon.png" alt="LINE" /></a>
+                <a href="#"
+                    ><img src="images/insta-icon.png" alt="Instagram"
+                /></a>
+            </div>
+        </footer>
         <script>
-            // スライドショー
+            let slideIndex = 0;
             const slides = document.querySelectorAll(".slide");
-            let current = 0;
+            const prevBtn = document.querySelector(".prev");
+            const nextBtn = document.querySelector(".next");
 
-            setInterval(() => {
-                slides[current].classList.remove("active");
-                current = (current + 1) % slides.length;
-                slides[current].classList.add("active");
-            }, 4000);
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.style.display = i === index ? "block" : "none";
+                });
+            }
+            function nextSlide() {
+                slideIndex = (slideIndex + 1) % slides.length;
+                showSlide(slideIndex);
+            }
+            function prevSlide() {
+                slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+                showSlide(slideIndex);
+            }
 
-            // ナビバーのスクロール制御
-            let lastScroll = 0;
-            const headerBar = document.querySelector(".header-bar");
+            nextBtn.addEventListener("click", nextSlide);
+            prevBtn.addEventListener("click", prevSlide);
 
-            window.addEventListener("scroll", () => {
-                const currentScroll = window.scrollY;
-                if (currentScroll > lastScroll) {
-                    headerBar.style.top = "-80px";
-                } else {
-                    headerBar.style.top = "0";
-                }
-                lastScroll = currentScroll;
-            });
+            setInterval(nextSlide, 4000);
+
+            showSlide(slideIndex);
+            // ローディング画面を2.5秒後に非表示にする
+            setTimeout(() => {
+                const intro = document.querySelector(".intro-screen");
+                if (intro) intro.style.display = "none";
+            }, 3500);
         </script>
     </body>
 </html>

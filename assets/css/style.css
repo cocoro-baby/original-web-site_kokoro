@@ -1,142 +1,437 @@
+/* 
+コンテンツ全体にかかるCSS
+*/
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html, body {
-  font-family: "Yu Mincho", serif;
-  height: 100%;
-  background-color: #fdfaf6;
-  color: #333;
+/* 
+Header
+*/
+body {
+    font-family: "Hiragino Mincho Pro", "Yu Mincho", "MS Mincho",
+        "Noto Serif JP", serif;
+    line-height: 1.6;
+    background-color: #fffaf4;
+    color: #333;
+}
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+    letter-spacing: 0.1em;
 }
 
-/* ------------------------
-   スライドショー背景
------------------------- */
-.main-visual {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
+.site-header {
+    background-color: #f3efe7;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+}
+.nav-list li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+.nav-list li a:hover {
+    color: #cc3300;
 }
 
-/* 背景画像 */
-.slideshow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.slide.active {
-  opacity: 1;
-}
-
-/* ------------------------
-   ロゴ表示（縦書き・アニメーション）
------------------------- */
-.logo-container {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-  position: relative;
-}
-
-.main-logo {
-  writing-mode: vertical-rl;
-  font-size: 3rem;
-  color: white;
-  opacity: 0;
-  animation: fadeIn 2.5s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  0% {
+.hero-text {
+    color: rgb(249, 248, 246);
+    position: absolute;
+    font-family: "Hiragino Mincho Pro", "Yu Mincho", "MS Mincho",
+        "Noto Serif JP", serif;
+    font-size: 2.2rem;
+    letter-spacing: 0.15em;
+    top: 30%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    writing-mode: vertical-rl;
+    text-align: center;
     opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
+    animation: fadeUp 3s ease-out forwards;
+}
+
+.title {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #fff7e0;
+    letter-spacing: 0.25em;
+    margin-top: 1rem;
+    opacity: 0;
+    animation: fadeIn 2s ease-out 1s forwards;
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.15em;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out 0.3s forwards;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.slide {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+.prev {
+    left: 20px;
+}
+.next {
+    right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .about-block {
+        flex-direction: column;
+    }
+    .about-block.reverse {
+        flex-direction: column;
+    }
+    .about-block img,
+    .about-text {
+        width: 100%;
+    }
+    .about-text {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-text {
+        font-size: 1.5rem;
+        left: 40%;
+        top: 30%;
+        transform: translate(-50%, -50%); /* ←中央ど真ん中に固定！ */
+    }
+
+    .hero {
+        height: 50vh;
+    }
+
+    .slideshow-container {
+        height: 50vh;
+    }
+
+    .slide {
+        height: 50vh;
+    }
+
+    .title {
+        font-size: 3.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+/* =========================
+|| ここから下がメインですよ〜💞 |
+=========================== */
+
+/* ===== ごあいさつ ===== */
+#about {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    min-height: 600px;
+    margin: auto;
+    font-size: 1rem;
+    line-height: 3.5;
+    text-align: left;
+
+    /*background-image: url('../img/waon_photo1.jpg') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 2rem 1rem ;*/
+}
+.about-block {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 3rem 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.about-block img {
+    width: 40%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.about-text {
+    width: 60%;
+    font-size: 1rem;
+    line-height: 2;
+}
+
+.about-block.reverse {
+    flex-direction: row-reverse;
+}
+
+.sp-only {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    #about {
+        margin-top: 5vh;
+        padding: 1.5rem 1rem;
+        font-size: 0.95rem;
+        line-height: 3;
+        text-align: left;
+        width: 80%;
+    }
+    .about-block {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .about-block.reverse {
+        flex-direction: row-reverse;
+    }
+    .about-block img {
+        width: 45%;
+    }
+    .about-text {
+        width: 50%;
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+
+    .sp-only {
+        display: inline;
+    }
+}
+
+/* ===== メニュー（料理・お酒） ===== */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+.menu-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.menu-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+.menu-item:hover img {
+    transform: scale(1.05);
+}
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.4s ease;
+}
+.menu-item:hover .caption {
     opacity: 1;
     transform: translateY(0);
-  }
 }
 
-/* ------------------------
-   ナビゲーション（上部固定→スクロールで非表示）
------------------------- */
-.header-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 12px 0;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  z-index: 10;
-  transition: top 0.4s ease;
+/* ===== お知らせ ===== */
+#news {
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 1rem;
+}
+#news a {
+    color: #0077cc;
+    text-decoration: none;
 }
 
-.nav-list {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  list-style: none;
+/* ===== フッター ===== */
+footer {
+    background-color: #f3efe7;
+    padding: 1rem;
+    text-align: center;
+}
+.sns-icons {
+    margin-top: 0.5rem;
+}
+.sns-icons img {
+    width: 32px;
+    margin: 0 8px;
 }
 
-.nav-list li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  padding: 6px 10px;
-  transition: background-color 0.3s ease, border 0.3s ease;
+/* ===== アニメーション ===== */
+@keyframes slideFade {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    5%,
+    15% {
+        opacity: 1;
+    }
+    20%,
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.nav-list li a:hover {
-  background-color: rgba(0,0,0,0.1);
-  border: 1px solid rgba(0,0,0,0.3);
-  border-radius: 4px;
-}
-.main-visual {
-  height: 100vh;
-  background-color: #fdfaf6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
+/* ===== レスポンシブ対応 ===== */
+@media screen and (max-width: 768px) {
+    .nav-list {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-list li a {
+        font-size: 0.95rem;
+        padding: 5px 0;
+    }
 
-.logo-container {
-  animation: fadeIn 2.5s ease-out forwards;
-  opacity: 0;
+    .menu-grid {
+        grid-template-columns: 1fr 1fr;
+        padding: 1rem;
+        gap: 10px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .caption {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
 }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.main-logo-img {
-  width: 300px;
-  max-width: 80%;
-  height: auto;
+.intro-screen {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeOut 1s ease 2.5s forwards;
+}
+.intro-text {
+    writing-mode: vertical-rl;
+    text-align: center;
+    font-family: "Hiragino Mincho Pro", "Yu Mincho", "MS Mincho",
+        "Noto Serif JP", serif;
+    letter-spacing: 0.15em;
+    animation: fadeUp 2s ease-out forwards;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+}
+
+.intro-screen .subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.5rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+}
+
+.intro-screen .title {
+    color: #fff7e0;
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 0.25em;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
