@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>輪をん | 心ほどける、和のひととき</title>
         <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="icon" href="assets/img/waon_logo.png" type="image/png" />
     </head>
     <body>
         <div class="intro-screen">
@@ -15,7 +16,7 @@
         </div>
 
         <header class="site-header">
-            <nav>
+            <nav class="site-header">
                 <ul class="nav-list">
                     <li><a href="#about">ご挨拶</a></li>
                     <li><a href="#menu-food">お品書き</a></li>
@@ -62,144 +63,167 @@
             </div>
         </section>
 
-        <section id="about">
-            <h2>ご挨拶</h2>
-            <div class="about-block">
-                <img src="assets/img/waon_sign2.jpg" alt="輪をんの提灯" />
-                <div class="about-text">
-                    <p>
-                        小料理屋「輪をん」は、心ほどけるような優しい味と、あたたかい時間を提供しています。<br />
-                        店名の「輪をん」は、ひらがなの最後の文字「わ・を・ん」からきています。<br />
-                        言葉の終わりのように、皆さまの日々の締めくくりや、最後にふらりと立ち寄りたくなる場所でありたい——<br />
-                        そんな想いが込められています。
-                    </p>
+        <section id="about-bg">
+            <div id="about">
+                <h2>ご挨拶</h2>
+                <div class="about-block">
+                    <img src="assets/img/waon_sign2.jpg" alt="輪をんの提灯" />
+                    <div class="about-text">
+                        <p>
+                            小料理屋「輪をん」は、心ほどけるような優しい味と、<br />あたたかい時間を提供しています。<br />
+                            店名の「輪をん」は、ひらがなの最後の文字<br />「わ・を・ん」からきています。<br />
+                            言葉の終わりのように、皆さまの日々の締めくくりや、<br />最後にふらりと立ち寄りたくなる場所でありたい——<br />
+                            そんな想いが込められています。
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- 第2部：文章左、画像右 -->
-            <div class="about-block reverse">
-                <div class="about-text">
-                    <p>
-                        女将が一品一品、想いを込めて手作りしたお料理とお酒を囲みながら、<br />
-                        どこか楽しくて落ち着く、そんな時間をお過ごしいただけます。<br />
-                        初めての方も、常連さんも、皆さまにとって「ただいま」と言いたくなるような場所になれば嬉しいです。
-                    </p>
+                <!-- 第2部：文章左、画像右 -->
+                <div class="about-block reverse">
+                    <div class="about-text">
+                        <p>
+                            女将が一品一品、想いを込めて手作りしたお料理とお酒を囲みながら、
+                            どこか楽しくて落ち着く、<br />そんな時間をお過ごしいただけます。<br />
+                            初めての方も、常連さんも、皆さまにとって「ただいま」と言いたくなるような場所になれば嬉しいです。
+                        </p>
+                    </div>
+                    <img
+                        src="assets/img/waon_counter2.jpg"
+                        alt="お酒とカウンターの風景"
+                    />
                 </div>
-                <img src="assets/img/waon_counter2.jpg" alt="お酒とカウンターの風景" />
             </div>
         </section>
 
         <section id="menu-food">
             <h2>お品書き</h2>
             <div class="menu-grid">
-                <!-- 6つ分あとで画像とテキスト入れてね -->
                 <div class="menu-item">
-                    <img src="https://placehold.jp/400x300.png" />
-                    <div class="caption">料理1</div>
+                    <img
+                        src="assets/img/renkon.jpg"
+                        alt="れんこんと人参のきんぴら"
+                    />
+                    <div class="caption">れんこんと人参のきんぴら</div>
                 </div>
                 <div class="menu-item">
-                    <img src="https://placehold.jp/400x300.png" />
-                    <div class="caption">料理2</div>
+                    <img src="assets/img/cheese.jpg" alt="チーズ鉄板焼き" />
+                    <div class="caption">濃厚コーンチーズ鉄板</div>
                 </div>
                 <div class="menu-item">
-                    <img src="https://placehold.jp/400x300.png" />
-                    <div class="caption">料理3</div>
+                    <img src="assets/img/dashimaki.jpg" alt="出汁巻きたまご" />
+                    <div class="caption">出汁巻きたまご（出汁・甘）</div>
                 </div>
                 <div class="menu-item">
-                    <img src="https://placehold.jp/400x300.png" />
-                    <div class="caption">料理4</div>
+                    <img src="assets/img/sunazuri.jpg" alt="砂ずりの鉄板焼き" />
+                    <div class="caption">砂ずりの鉄板焼き</div>
                 </div>
                 <div class="menu-item">
-                    <img src="https://placehold.jp/400x300.png" />
-                    <div class="caption">料理5</div>
+                    <img src="assets/img/karaage.jpg" alt="鶏の唐揚げ" />
+                    <div class="caption">大人気 鶏の唐揚げ</div>
                 </div>
                 <div class="menu-item">
-                    <img src="https://placehold.jp/400x300.png" />
-                    <div class="caption">料理6</div>
+                    <img
+                        src="assets/img/spearibu.jpg"
+                        alt="スペアリブの煮込み"
+                    />
+                    <div class="caption">輪をん名物とろとろスペアリブ</div>
                 </div>
             </div>
         </section>
 
-        <section id="menu-drinks">
-            <h2>お酒</h2>
+        <section id="menu-sake">
+            <h2>お 品 書 き（お酒）</h2>
             <div class="menu-grid">
+                <!-- 酒道楽 越後大吟醸 -->
                 <div class="menu-item">
-                    <img src="https://placehold.jp/400x300.png" />
-                    <div class="caption">お酒1</div>
+                    <img src="assets/img/echigo.jpg" alt="酒道楽 越後大吟醸" />
+                    <div class="overlay">華やかな香りとすっきりした飲み口</div>
+                    <p>酒道楽 越後大吟醸</p>
                 </div>
+
+                <!-- 弥彦泉 -->
                 <div class="menu-item">
-                    <img src="https://placehold.jp/400x300.png" />
-                    <div class="caption">お酒2</div>
+                    <img src="assets/img/yahiko.jpg" alt="弥彦泉" />
+                    <div class="overlay">新潟の自然が生んだ淡麗辛口</div>
+                    <p>弥彦泉（やひこいずみ）</p>
                 </div>
+
+                <!-- 深山淡雪 -->
                 <div class="menu-item">
-                    <img src="https://placehold.jp/400x300.png" />
-                    <div class="caption">お酒3</div>
+                    <img src="assets/img/awayuki.jpg" alt="深山淡雪" />
+                    <div class="overlay">口当たりまろやか、爽やかな余韻</div>
+                    <p>深山淡雪（みやまあわゆき）</p>
                 </div>
+
+                <!-- 越乃銀峰 -->
                 <div class="menu-item">
-                    <img src="https://placehold.jp/400x300.png" />
-                    <div class="caption">お酒4</div>
+                    <img src="assets/img/ginpo.jpg" alt="越乃銀峰" />
+                    <div class="overlay">キレのある後味、食中酒に最適</div>
+                    <p>越乃銀峰（こしのぎんぽう）</p>
                 </div>
+
+                <!-- 百歳 -->
                 <div class="menu-item">
-                    <img src="https://placehold.jp/400x300.png" />
-                    <div class="caption">お酒5</div>
+                    <img src="assets/img/hyakusai.jpg" alt="百歳" />
+                    <div class="overlay">力強くもやさしい味わい</div>
+                    <p>百歳（ひゃくさい）</p>
                 </div>
+
+                <!-- 船中八策 -->
                 <div class="menu-item">
-                    <img src="https://placehold.jp/400x300.png" />
-                    <div class="caption">お酒6</div>
+                    <img src="assets/img/hassaku.jpg" alt="船中八策" />
+                    <div class="overlay">辛口好きに贈る、力強い一本</div>
+                    <p>船中八策（せんちゅうはっさく）</p>
                 </div>
             </div>
         </section>
 
         <section id="news">
             <h2>店舗情報</h2>
-            <p>
-                📍 住所：<a href="https://maps.google.com" target="_blank"
-                    >Googleマップで開く</a
-                >
-            </p>
-            <p>🕐 定休日：月曜日</p>
+            <div class="shop-info">
+                <p>📍 <strong>住所：</strong>福岡県田川郡伊田町２９８０−１６</p>
+                <p>🕐 <strong>定休日：</strong>毎週月曜日・火曜日</p>
+                <p>⏰ <strong>営業時間：</strong>18:00〜23:00</p>
+            </div>
+
+            <div class="map-wrap">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3321.505940288337!2d130.81135167569903!3d33.64405017331343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3543d915ce8d40fb%3A0x60747d8e9b64c782!2z6aOf44Go6YWS44Gu5Zuj5qySIOi8quOCkuOCkw!5e0!3m2!1sja!2sph!4v1753276415311!5m2!1sja!2sph"
+                    width="600"
+                    height="450"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </div>
+            <div class="sns-icons">
+                <p>
+                    SNSでも情報発信しています。<br />気軽にお問い合わせください
+                </p>
+                <a href=" https://line.me/ti/p/FM4Sa8ejyS"
+                    ><img
+                        src="https://img.icons8.com/?size=100&id=21746&format=png&color=000000"
+                        alt="LINE"
+                    /></a>
+            
+                <a href="https://www.instagram.com/wawon_0224?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    ><img
+                        src="https://img.icons8.com/?size=100&id=32323&format=png&color=000000"
+                        alt="Instagram"
+                    /></a>
+                <div>
+                    <a href=" https://line.me/ti/p/FM4Sa8ejyS"
+                    ><span>LNEで予約</span></a>
+                    <a href="https://www.instagram.com/wawon_0224?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    ><span>Instagram</span></a>
+                </div>
+            </div>
         </section>
 
         <footer>
-            <p>© 2025 輪をん</p>
-            <div class="sns-icons">
-                <a href="#"><img src="images/line-icon.png" alt="LINE" /></a>
-                <a href="#"
-                    ><img src="images/insta-icon.png" alt="Instagram"
-                /></a>
-            </div>
+            <p>© 〜食と酒の団欒〜 輪をん</p>
         </footer>
-        <script>
-            let slideIndex = 0;
-            const slides = document.querySelectorAll(".slide");
-            const prevBtn = document.querySelector(".prev");
-            const nextBtn = document.querySelector(".next");
-
-            function showSlide(index) {
-                slides.forEach((slide, i) => {
-                    slide.style.display = i === index ? "block" : "none";
-                });
-            }
-            function nextSlide() {
-                slideIndex = (slideIndex + 1) % slides.length;
-                showSlide(slideIndex);
-            }
-            function prevSlide() {
-                slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-                showSlide(slideIndex);
-            }
-
-            nextBtn.addEventListener("click", nextSlide);
-            prevBtn.addEventListener("click", prevSlide);
-
-            setInterval(nextSlide, 4000);
-
-            showSlide(slideIndex);
-            // ローディング画面を2.5秒後に非表示にする
-            setTimeout(() => {
-                const intro = document.querySelector(".intro-screen");
-                if (intro) intro.style.display = "none";
-            }, 3500);
-        </script>
     </body>
+    <script src="./assets/js/script.js"></script>
 </html>

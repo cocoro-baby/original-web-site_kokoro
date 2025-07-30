@@ -1,6 +1,8 @@
 /* 
 コンテンツ全体にかかるCSS
 */
+@import url("https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap");
+
 * {
     margin: 0;
     padding: 0;
@@ -19,9 +21,18 @@ body {
 }
 h2 {
     text-align: center;
-    font-size: 2rem;
     margin: 2rem 0 1rem;
     letter-spacing: 0.1em;
+    font-family: "Hiragino Mincho Pro", serif;
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    color: #5c3d00;
+    border-bottom: 2px solid #e0c39b;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+
+    text-align: center;
+    display: block;
 }
 
 .site-header {
@@ -31,12 +42,14 @@ h2 {
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 .nav-list {
     display: flex;
-    justify-content: center;
     gap: 30px;
     list-style: none;
+    justify-content: center;
+    padding: 0%;
 }
 .nav-list li a {
     text-decoration: none;
@@ -47,6 +60,19 @@ h2 {
 }
 .nav-list li a:hover {
     color: #cc3300;
+}
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.logo img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%; /* ←これで丸くなる */
 }
 
 .hero {
@@ -102,13 +128,36 @@ h2 {
     height: 100vh;
     object-fit: cover;
 }
+.slide:first-child {
+    display: block;
+}
+
+.slideshow-container::before,
+.slideshow-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 5%;
+    height: 100%;
+    z-index: 2;
+    /*background-color: rgba(255, 255, 255, 0.4);*/
+    background-image: url(../img/waon_photo1.jpg);
+    pointer-events: none; /* ← スライドボタン押せるようにする */
+}
+
+.slideshow-container::before {
+    left: 0;
+}
+.slideshow-container::after {
+    right: 0;
+}
 
 .prev,
 .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0);
     color: white;
     border: none;
     font-size: 1.5rem;
@@ -119,10 +168,10 @@ h2 {
     transition: background-color 0.3s ease;
 }
 .prev {
-    left: 20px;
+    left: 100px;
 }
 .next {
-    right: 20px;
+    right: 100px;
 }
 
 @media screen and (max-width: 768px) {
@@ -176,21 +225,25 @@ h2 {
 =========================== */
 
 /* ===== ごあいさつ ===== */
+#about-bg{
+    width: 100%;
+    height: auto;
+    background-image: url(../img/waon_photo1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; /* ←これ！ */
+    background-position: center;
+}
+
 #about {
-    padding: 2rem 1rem;
+    padding: 4rem 2rem;
     max-width: 800px;
     min-height: 600px;
     margin: auto;
     font-size: 1rem;
-    line-height: 3.5;
+    line-height: 2.2;
     text-align: left;
-
-    /*background-image: url('../img/waon_photo1.jpg') ;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 2rem 1rem ;*/
 }
+
 .about-block {
     display: flex;
     align-items: center;
@@ -201,20 +254,16 @@ h2 {
 }
 
 .about-block img {
-    width: 40%;
+    width: 35%;
     max-height: 400px;
     object-fit: cover;
     border-radius: 10px;
 }
 
 .about-text {
-    width: 60%;
+    width: 55%;
     font-size: 1rem;
     line-height: 2;
-}
-
-.about-block.reverse {
-    flex-direction: row-reverse;
 }
 
 .sp-only {
@@ -255,45 +304,103 @@ h2 {
 /* ===== メニュー（料理・お酒） ===== */
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
+#menu-food {
+    background-color: #fdf7f0; /* 和紙っぽい温かみ */
+    /* or */
+    background-image: url("assets/img/washi_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .menu-item {
     position: relative;
-    overflow: hidden;
     cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    transition: transform 0.3s ease;
+    text-align: center;
 }
 .menu-item img {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.5s;
+    transition: transform 0.3s ease;
+    border-radius: 12px 12px 0 0;
 }
 .menu-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.03);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 0.9rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: 0 0 12px 12px;
+}
+
+.menu-item:hover .overlay {
+    opacity: 1;
 }
 .caption {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
+    width: 100%;
     background: rgba(0, 0, 0, 0.6);
     color: #fff;
-    padding: 10px;
+    padding: 0.5rem;
     font-size: 1rem;
     text-align: center;
     opacity: 0;
     transform: translateY(100%);
-    transition: all 0.4s ease;
+    transition: opacity 0.3s;
 }
 .menu-item:hover .caption {
     opacity: 1;
     transform: translateY(0);
 }
 
+.menu-item p {
+    margin: 0;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+    border-radius: 0 0 12px 12px;
+}
+#menu-sake {
+    background-color: #fdf7f0;
+    background-image: url("assets/img/washi_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media (hover: none) {
+    .menu-item:active .overlay {
+        opacity: 1;
+    }
+}
 /* ===== お知らせ ===== */
 #news {
     padding: 2rem 1rem;
@@ -312,11 +419,15 @@ footer {
     text-align: center;
 }
 .sns-icons {
-    margin-top: 0.5rem;
+    margin-top: 2rem;
 }
 .sns-icons img {
-    width: 32px;
-    margin: 0 8px;
+    width: 70px;
+    margin: 0 20px;
+}
+
+.sns-icons div{
+    margin-top: -15px;
 }
 
 /* ===== アニメーション ===== */
@@ -397,7 +508,7 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    animation: fadeOut 1s ease 2.5s forwards;
+    animation: fadeOut 1s ease 4s forwards;
 }
 .intro-text {
     writing-mode: vertical-rl;
@@ -434,4 +545,14 @@ footer {
         opacity: 0;
         visibility: hidden;
     }
+}
+
+.shop-info {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 2;
+}
+
+.shop-info p {
+    margin: 0.5rem 0;
 }
